@@ -41,8 +41,9 @@ completion = client.chat.completions.create(
   model="gpt-4o-mini",
   store=True,
   messages=[
-    {"role": "user", "content": "From the Read me create a step by step installation of this github program: "+ readme_str }
+    {"role": "user", "content": "From the Read.me below, create a single bash script below that would be a ste of step installation of the github program. assume i use a ubuntu machine: "+ readme_str }
   ]
 )
+chatgpt_message = completion.choices[0].message.content
 
-print(completion.choices[0].message);
+print(completion.choices[0].message.content);
